@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "website" do |website|
 		# Every Vagrant virtual environment requires a box to build off of.
 		website.vm.box = "trusty64"
-		#website.vm.synced_folder "./sites", "/sites"
+		website.vm.synced_folder "./synced", "/synced"
 		website.vm.provision :shell, path: "bootstrap.sh"
 		# The url from where the 'config.vm.box' box will be fetched if it
 		# doesn't already exist on the user's system.
